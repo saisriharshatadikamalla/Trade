@@ -1,0 +1,29 @@
+Database Setup:
+
+Used Springboot's in memory database H2.
+Used JPA for modelling tables.
+
+This project contains two tables
+A.User table 
+B.Trade Table
+
+Trade table contains reference to users table .(One user can have multiple trades)
+
+setup:
+
+Add following to application.properties. It will auto configure everything.
+
+spring.h2.console.enabled=true  (will enable console on browser to see tables )
+spring.h2.console.path=/h2      (Path to access console on browser)
+
+spring.datasource.url=jdbc:h2:mem:SWAGGER;DB_CLOSE_DELAY=-1  (jdbc url  along with db name)
+
+spring.datasource.username=sa  
+spring.datasource.password=
+
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=create-drop (Everytime we start server , will clear the tables and create new tables)
+spring.jpa.show-sql=true (will enable showing queries on ide console)
+spring.jpa.properties.hibernate.format_sql=true (for beautiying console)
+
+ 
